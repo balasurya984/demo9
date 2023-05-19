@@ -1,0 +1,9 @@
+1. ssh keygen
+2. docker pull sequenceiq/hadoop-docker:latest 
+3. docker run -it -p 50070:50070 -p 8088:8088 -p 8042:8042 sequenceiq/hadoop-docker:latest /etc/bootstrap.sh -bash
+4. cd usr/local/hadoop/
+5. vi input/data.txt
+6. bin/hadoop fs -mkdir /input
+7. bin/hadoop fs -put input/data.txt /input
+8. bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.0.jar wordcount /input/data.txt /output
+
